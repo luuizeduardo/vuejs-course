@@ -10,14 +10,13 @@
 <body>
     <div id="app">
         <!-- 
-            A propriedade v-on:input é usada quando queremos capturar o que o usuário está digitando
+            A propriedade v-bind é usada quando queremos indicar ao html que deve ser 
+            interpretado um atributo definido no js que contém o código vue da página
         -->
-        <input type="text" v-on:input="changeTitle">
-        <p>Acesso ao atributo: {{ title }}</p>
-        <p>Chamando através de um método: {{ sayHello() }}</p>
+        <a v-bind:href="link" target="_blank">Google</a>
     </div>
 
     <script src="../js/vue.js"></script>
-    <script src="../js/exemplo2.js"></script>
+    <script src="../js/exemplo3.js"></script>
 </body>
 </html>
