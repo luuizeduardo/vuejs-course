@@ -9,11 +9,28 @@
 </head>
 <body>
     <div id="app">
+        <!-- A diretiva v-once faz com que o elemento seja renderizado apenas uma vez pelo Vue.
+            Desta forma, caso o atributo seja alterado durante a execução da aplicação, o valor
+            renderizado a primeira vez não é alterado.
+        -->
+        <h1 v-once>{{ title }}</h1>
+        <p>{{ sayHello() }}</p>
+        
         <!-- 
-            A propriedade v-bind é usada quando queremos indicar ao html que deve ser 
+            A diretiva v-bind é usada quando queremos indicar ao html que deve ser 
             interpretado um atributo definido no js que contém o código vue da página
         -->
         <a v-bind:href="link" target="_blank">Google</a>
+
+        <hr>
+
+        <!-- A diretiva v-html informa para o Vue que é necessário renderizar um código HTML.
+            Por padrão, se utilizássemos a estratégia de imprimir o atributo desta forma: {{linkCompleto}},
+            o Vue iria interpretar como sendo texto simples.
+            CUIDADO: Somente use esta diretiva caso tenha absoluta certeza da procedência do HTML. 
+            De outra forma, você poderia ser alvo de ataques cross-site com javascript.
+        -->
+        <p v-html="linkCompleto"></p>
     </div>
 
     <script src="../js/vue.js"></script>
