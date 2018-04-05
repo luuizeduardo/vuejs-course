@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VueJS</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="increase">Add</button>
+        <button v-on:click="counter++">Add w/ JS</button>
+        <!-- Multiplicando o contador na view -->
+        <p> {{ counter * 2 }} </p>
+        <!-- Podemos usar expressões simples do JS entre as chaves que apresentam
+             as variáveis do Vue 
+        -->
+        <p> {{ counter > 10 ? 'Maior que 10' : 'Menor que 10' }} </p>
+        <hr>
+        <button v-on:click="increaseByParam(2)">Add</button>
+        <p> {{ counterByParam }} </p>
+        <p v-on:mousemove="updateCoordinates">
+            Coordinates: {{ x }} / {{ y }}
+            - <span v-on:mousemove.stop=""> DEAD SPOT</span>
+            <!-- 
+                O evento "stop" na linha acima tem o mesmo significado do "stopPropagation"
+                do javascript. O Vue nos permite acessar os eventos de uma diretiva atavés
+                do "." no final do evento. Chamamos isso de modificadores de evento. 
+            -->
+        </p>
+        <!-- 
+            O evento "keyup" por padrão dispara o evento quando o usuário "solta" a tecla.
+            Com o modificador ".enter", podemos identificar quando o usuário pressionou a
+            tecla ENTER para disparar o evento.
+        -->
+        <input type="text" name="key" id="key" v-on:keyup.enter="alertMe">
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script src="../js/exemplo4.js"></script>
+</body>
+</html>
