@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VueJS</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="counter++">Increase</button>
+        <button v-on:click="counter--">Decrease</button>
+        <button v-on:click="secondCounter++">SecondCounter</button>
+
+        <p>Counter: {{ counter }} | {{ secondCounter }} </p>
+        
+        <!-- Variáveis que estão dentro do "computed" são chamadas da mesma forma que o data. -->
+        <p>Result: {{ result() }} | {{ output }} </p>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script src="../js/exemplo6.js"></script>
+</body>
+</html>
