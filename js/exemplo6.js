@@ -12,6 +12,17 @@ new Vue({
             return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5';
         }
     },
+    // O watch fica observando mudanças na propridade que definirmos. Esta propriedade 
+    // deve estar dentro do data. Recomendado usar quando precisamos que algo aconteça
+    // de forma reativa.
+    watch: {
+        counter: function(value){
+            var vm = this;
+            setTimeout(function() {
+                vm.counter = 0;
+            }, 2000);
+        }
+    },
     methods: {
         result: function(){
             console.log('Method');
