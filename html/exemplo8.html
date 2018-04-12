@@ -19,6 +19,21 @@
         <div class="demo"
             @click="attachBlue = !attachBlue"
             :class="{blue: attachBlue}"></div>
+        
+        <hr>
+        
+        <div class="demo"
+            :class="color"></div>
+        <br>
+        
+        <input type="text" v-model="color">
+        
+        <hr>
+        
+        <div class="demo"
+            :class="[color, {red: attachRed}]"></div>
+        <br>
+        
     </div>
 
     <script src="../js/vue.js"></script>

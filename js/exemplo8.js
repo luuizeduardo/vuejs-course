@@ -3,6 +3,7 @@ new Vue({
     data:{
         attachRed: false,
         attachGreen: false,
-        attachBlue: false
+        attachBlue: false,
+        color: 'green'
     }
 });

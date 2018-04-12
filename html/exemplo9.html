@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VueJS</title>
+	<link rel="stylesheet" href="../css/exemplo9.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Podemos usar o style com camel-case para não precisar usar apóstrofo dentro das chaves -->
+        <div class="demo" :style="{backgroundColor: color}"></div>
+
+        <!-- Podemos usar o "computed property" para mudar o style dinamicamente-->
+        <div class="demo" :style="myStyle"></div>            
+        <div class="demo"></div>
+        <br>
+
+        <input type="text" v-model="color">
+        <input type="text" v-model="width">  
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script src="../js/exemplo9.js"></script>
+</body>
+</html>
